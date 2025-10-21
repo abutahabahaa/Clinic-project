@@ -23,27 +23,7 @@ This project aims to automate the basic operations of a clinic, including:
 
 ## 📁 Project Structure
 
-ClinicProject/
-│
-├── src/
-│ ├── controllers/ # JavaFX controllers for each UI screen
-│ ├── dao/ # Database access classes (CRUD operations)
-│ ├── models/ # POJO classes (Patient, Doctor, Appointment)
-│ ├── utils/ # Helper classes (DBConnection, FileUtil, MD5Util)
-│ └── main/ # Main.java – entry point
-│
-├── resources/
-│ ├── fxml/ # FXML files for each screen
-│ ├── css/ # Application styles
-│ └── images/ # Icons, backgrounds, and avatars
-│
-├── data/
-│ ├── patients.txt
-│ ├── doctors.txt
-│ └── appointments.txt
-│
-└── dist/
-└── ClinicProject.jar # Executable JAR file
+
 ---
 
 ## ⚙️ Requirements
@@ -112,12 +92,12 @@ private static final String PASSWORD = "";
 
 ## 👨‍💻 Developer Information
 
-👤 Name: Bahaa Mohamed Zakaria Abutaha
-🎓 Major: Computer Science
-🏫 University: Islamic University of Gaza
-📧 Email: abutahabahaa6@gmail.com
-💻 Languages: Java, HTML, CSS, JavaScript
-🧠 Trained at: Top Tech Company
+- **👤 Name**: Bahaa Mohamed Zakaria Abutaha
+- **🎓 Major**: Computer Science
+- **🏫 University**: Islamic University of Gaza
+- **📧 Email**: abutahabahaa6@gmail.com
+- **💻 Languages**: Java, HTML, CSS, JavaScript
+- **🧠 Trained at**: Top Tech Company
 
    ## 📜 License
 
