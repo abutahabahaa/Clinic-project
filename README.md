@@ -22,3 +22,22 @@ This project aims to automate the basic operations of a clinic, including:
 ---
 
 ## 📁 Project Structure
+
+---
+
+## ⚙️ Requirements
+
+Before running the project, make sure you have:
+- ☕ **Java JDK 17 or newer**
+- 🧱 **MySQL Server** (or XAMPP)
+- 🧩 **JavaFX SDK** (if not bundled in your JDK)
+- 🧰 **NetBeans IDE** or **IntelliJ IDEA**
+
+---
+
+## 🚀 How to Run
+
+### 🖥️ Option 1: From NetBeans
+1. Clone or download the project:
+   ```bash
+   git clone https://github.com/abutahabahaa/ClinicProject.git
