@@ -48,6 +48,7 @@ Before running the project, make sure you have:
 Go to the /dist folder.
 
 Open a terminal in that folder and run:
+```bash
     java -jar ClinicProject.jar
 
 ## 🗄️ Database Setup
