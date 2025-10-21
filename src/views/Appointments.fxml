@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AppointmentsController"
+            stylesheets="@style.css" styleClass="root">
+
+    <top>
+        <HBox alignment="CENTER" styleClass="top-section">
+            <Label styleClass="header" text="إدارة المواعيد" />
+        </HBox>
+    </top>
+
+    <center>
+        <HBox alignment="TOP_CENTER" spacing="20.0" style="-fx-padding: 20;">
+
+            <!-- بطاقة الحجز -->
+            <VBox spacing="10.0" styleClass="card" HBox.hgrow="NEVER" maxWidth="360">
+                <Label text="حجز موعد جديد" />
+                <VBox spacing="10.0">
+                    <ComboBox fx:id="patientComboBox" promptText="اختر المريض" prefWidth="300" />
+                    <ComboBox fx:id="doctorComboBox"  promptText="اختر الطبيب" prefWidth="300" />
+                    <DatePicker fx:id="datePicker"     promptText="اختر التاريخ" />
+                    <TextField  fx:id="timeField"      promptText="الوقت (HH:MM)" />
+                </VBox>
+                <HBox spacing="10.0">
+                    <Button onAction="#handleSchedule" text="حجز الموعد" styleClass="btn-accent" />
+                    <Button onAction="#clearFields"    text="مسح الحقول" styleClass="btn-muted" />
+                </HBox>
+            </VBox>
+
+            <!-- بطاقة العرض -->
+            <VBox spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+                <Label text="قائمة المواعيد" />
+
+                <HBox spacing="10.0" styleClass="toolbar">
+                    <TextField  fx:id="searchField"       promptText="ابحث باسم المريض أو الطبيب" />
+                    <DatePicker fx:id="searchDatePicker"  promptText="ابحث بالتاريخ" />
+                    <ComboBox   fx:id="sortComboBox"      promptText="فرز حسب" prefWidth="160" />
+                    <Button text="بحث" onAction="#handleSearchAppointments" styleClass="btn-primary" />
+                    <!-- جديد -->
+                    <Button text="تحديث" onAction="#handleRefresh" styleClass="btn-primary" />
+                    <Button text="توليد التذكيرات (48h)" onAction="#handleGenerateReminders" styleClass="btn-accent" />
+                    <Button fx:id="cancelBtn" text="إلغاء العملية" onAction="#handleCancelTask" styleClass="btn-muted" />
+                    <ProgressIndicator fx:id="progress" visible="false" prefWidth="26" prefHeight="26"/>
+                    <Label fx:id="statusLabel" text="" />
+                </HBox>
+
+                <TableView fx:id="appointmentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn"      text="ID" />
+                        <TableColumn fx:id="patientColumn" text="المريض" />
+                        <TableColumn fx:id="doctorColumn"  text="الطبيب" />
+                        <TableColumn fx:id="dateColumn"    text="التاريخ" />
+                        <TableColumn fx:id="timeColumn"    text="الوقت" />
+                    </columns>
+                </TableView>
+
+                <!-- جديد: منطقة عرض التذكيرات -->
+                <Label text="التذكيرات القريبة" />
+                <TextArea fx:id="remindersArea" prefRowCount="6" wrapText="true" />
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 15;">
+            <Button id="back-button" onAction="#handleBackToDashboard" text="عودة إلى لوحة التحكم" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.DoctorsController"
+            stylesheets="@style.css" styleClass="root">
+
+   <top>
+      <HBox alignment="CENTER" styleClass="top-section">
+         <Label styleClass="header" text="إدارة الأطباء" />
+      </HBox>
+   </top>
+
+   <center>
+      <HBox alignment="TOP_CENTER" spacing="20.0" style="-fx-padding: 20;">
+
+         <VBox spacing="10.0" styleClass="card" HBox.hgrow="NEVER" maxWidth="360">
+            <Label text="إضافة/تعديل طبيب" />
+            <VBox spacing="10.0">
+               <TextField fx:id="nameField"      promptText="اسم الطبيب" />
+               <TextField fx:id="specialtyField" promptText="التخصص" />
+            </VBox>
+            <HBox spacing="10.0">
+               <Button onAction="#handleAddDoctor"    text="إضافة" styleClass="btn-accent" />
+               <Button onAction="#handleUpdateDoctor" text="تعديل" styleClass="btn-primary" />
+               <Button onAction="#handleDeleteDoctor" text="حذف"   styleClass="btn-danger" />
+            </HBox>
+            <Button onAction="#clearFields" text="مسح الحقول" styleClass="btn-muted" />
+         </VBox>
+
+         <VBox spacing="10.0" styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="قائمة الأطباء" />
+
+            <HBox spacing="10.0" styleClass="toolbar">
+               <TextField fx:id="searchField" promptText="ابحث بالاسم" />
+               <ComboBox fx:id="sortComboBox" promptText="فرز حسب" prefWidth="160" />
+               <Button text="بحث" onAction="#handleSearchDoctor" styleClass="btn-primary" />
+            </HBox>
+
+            <TableView fx:id="doctorsTable" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="idColumn"       text="ID" />
+                  <TableColumn fx:id="nameColumn"     text="الاسم" />
+                  <TableColumn fx:id="specialtyColumn" text="التخصص" />
+               </columns>
+            </TableView>
+         </VBox>
+      </HBox>
+   </center>
+
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 15;">
+         <Button id="back-button" onAction="#handleBackToDashboard" text="عودة إلى لوحة التحكم" />
+      </HBox>
+   </bottom>
+</BorderPane>

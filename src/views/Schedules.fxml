@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.SchedulesController"
+            stylesheets="@style.css" styleClass="root">
+
+    <top>
+        <HBox alignment="CENTER" styleClass="top-section">
+            <Label styleClass="header" text="جداول الأطباء" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="10.0" style="-fx-padding: 20;">
+            <!-- شريط أدوات -->
+            <HBox spacing="10.0" styleClass="toolbar">
+                <ComboBox fx:id="doctorCombo" promptText="اختر الطبيب" prefWidth="220"/>
+                <DatePicker fx:id="fromDate"   promptText="من تاريخ"/>
+                <DatePicker fx:id="toDate"     promptText="إلى تاريخ"/>
+                <Button fx:id="generateBtn" text="توليد الجدول" onAction="#handleGenerate" styleClass="btn-primary"/>
+                <Button fx:id="cancelBtn"   text="إلغاء"        onAction="#handleCancel"   styleClass="btn-muted"/>
+                <ProgressIndicator fx:id="progress" visible="false" prefWidth="24" prefHeight="24"/>
+                <Label fx:id="statusLabel" text=""/>
+            </HBox>
+
+            <!-- مخرجات -->
+            <TextArea fx:id="output" prefRowCount="18" wrapText="true" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 15;">
+            <Button id="back-button" onAction="#handleBackToDashboard" text="عودة إلى لوحة التحكم"/>
+        </HBox>
+    </bottom>
+</BorderPane>

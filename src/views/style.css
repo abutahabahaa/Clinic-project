@@ -1,0 +1,121 @@
+/* ========== أساسيات و ألوان عامة ========== */
+.root, .login-root, .signup-root {
+    -fx-font-family: "Tajawal", "Cairo", "Segoe UI", Arial, sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #f6f9fc, #eef3f8);
+    -fx-text-fill: #1f2a44;
+
+    /* ألوان قابلة لإعادة الاستخدام */
+    -primary:       #3a86ff;
+    -primary-700:   #2f6ed1;
+    -accent:        #22c55e;
+    -accent-700:    #16a34a;
+    -danger:        #ef4444;
+    -danger-700:    #dc2626;
+    -muted:         #94a3b8;
+    -surface:       #ffffff;
+    -surface-2:     #f2f5f9;
+    -border:        #e2e8f0;
+    -heading:       #0f172a;
+    -text:          #1f2937;
+}
+
+/* حاويات */
+.card {
+    -fx-background-color: -surface;
+    -fx-background-radius: 16;
+    -fx-padding: 20 22;
+    -fx-spacing: 14;
+    -fx-effect: dropshadow(gaussian, rgba(20,30,60,0.12), 18, 0.15, 0, 6);
+}
+.top-section {
+    -fx-background-color: rgba(255,255,255,0.7);
+    -fx-padding: 14 18;
+    -fx-effect: dropshadow(gaussian, rgba(20,30,60,0.08), 12, 0.15, 0, 4);
+}
+.label.header, .dashboard-title { -fx-font-size: 22px; -fx-font-weight: 800; -fx-text-fill: -heading; }
+.welcome-label { -fx-font-size: 20px; -fx-font-weight: 700; -fx-text-fill: -primary-700; }
+
+.toolbar {
+    -fx-background-color: -surface-2;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-border-color: -border;
+    -fx-border-radius: 12;
+}
+
+/* إدخال */
+.text-field, .password-field, .combo-box-base, .date-picker {
+    -fx-background-color: -surface;
+    -fx-background-radius: 10;
+    -fx-padding: 10 12;
+    -fx-text-fill: -text;
+    -fx-border-color: -border;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+.text-field:focused, .password-field:focused, .combo-box-base:focused, .date-picker:focused {
+    -fx-border-color: -primary;
+    -fx-effect: dropshadow(gaussian, rgba(58,134,255,0.25), 10, 0.2, 0, 2);
+}
+.combo-box .list-cell:filled:selected, .combo-box .list-cell:filled:hover { -fx-background-color: -surface-2; }
+
+/* أزرار */
+.button {
+    -fx-background-radius: 10;
+    -fx-padding: 10 16;
+    -fx-font-weight: 700;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(20,30,60,0.10), 12, 0.2, 0, 2);
+    -fx-background-insets: 0;
+}
+.btn-primary { -fx-background-color: linear-gradient(to bottom, -primary, -primary-700); }
+.btn-accent  { -fx-background-color: linear-gradient(to bottom, -accent, -accent-700); }
+.btn-danger  { -fx-background-color: linear-gradient(to bottom, -danger, -danger-700); }
+.btn-muted   { -fx-background-color: #64748b; }
+.btn-muted:hover { -fx-background-color: #475569; }
+#back-button { -fx-background-color: #334155; }
+#back-button:hover { -fx-background-color: #1f2937; }
+
+/* توافق مع معرفاتك القديمة */
+#loginButton      { -fx-background-color: linear-gradient(to bottom, -accent, -accent-700); }
+#signupButton, #backToLoginBtn { -fx-background-color: #94a3b8; }
+#createAccountBtn { -fx-background-color: linear-gradient(to bottom, -accent, -accent-700); }
+#clear-button     { -fx-background-color: #94a3b8; }
+
+/* TableView */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12;
+    -fx-border-color: -border;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+.table-view .column-header-background {
+    -fx-background-color: -surface-2;
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-color: -border;
+    -fx-border-width: 0 0 1 0;
+}
+.table-view .column-header .label { -fx-text-fill: -heading; -fx-font-weight: 700; }
+.table-view .table-row-cell:odd  { -fx-background-color: rgba(255,255,255,0.6); }
+.table-view .table-row-cell:even { -fx-background-color: rgba(255,255,255,0.9); }
+.table-view .table-row-cell:selected { -fx-background-color: rgba(58,134,255,0.18); }
+.table-view .table-cell { -fx-padding: 8 10; }
+
+/* Dashboard بطاقات */
+.action-item {
+    -fx-background-color: -surface;
+    -fx-background-radius: 14;
+    -fx-padding: 18;
+    -fx-spacing: 6;
+    -fx-effect: dropshadow(gaussian, rgba(20,30,60,0.08), 12, 0.15, 0, 4);
+}
+.card-title { -fx-font-size: 18px; -fx-font-weight: 800; -fx-text-fill: -heading; }
+.card-subtitle { -fx-font-size: 12px; -fx-text-fill: #6b7280; }
+.statistic-label { -fx-text-fill: #6b7280; -fx-font-size: 13px; }
+.statistic-value { -fx-text-fill: -primary-700; -fx-font-size: 26px; -fx-font-weight: 900; }
+
+/* RTL */
+.root * { -fx-node-orientation: right_to_left; }

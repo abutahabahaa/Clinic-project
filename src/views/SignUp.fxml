@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="520.0" prefWidth="560.0"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.SignUpController"
+            stylesheets="@style.css" styleClass="signup-root">
+    <center>
+        <VBox alignment="CENTER" spacing="18.0" styleClass="card">
+            <Label styleClass="header" text="إنشاء حساب جديد" />
+            <VBox alignment="CENTER" spacing="10.0">
+                <TextField fx:id="firstNameField" maxWidth="320.0" promptText="الاسم الأول" />
+                <TextField fx:id="lastNameField" maxWidth="320.0" promptText="الاسم الأخير" />
+                <TextField fx:id="emailField" maxWidth="320.0" promptText="البريد الإلكتروني" />
+                <PasswordField fx:id="passwordField" maxWidth="320.0" promptText="كلمة المرور" />
+                <PasswordField fx:id="confirmPasswordField" maxWidth="320.0" promptText="تأكيد كلمة المرور" />
+            </VBox>
+            <VBox alignment="CENTER" spacing="10.0">
+                <Button fx:id="createAccountBtn" onAction="#handleSignUp" text="إنشاء الحساب" styleClass="btn-accent" />
+                <Button fx:id="backToLoginBtn" onAction="#navigateToLogin" text="العودة لتسجيل الدخول" styleClass="btn-muted" />
+            </VBox>
+            <padding><Insets left="24" right="24" top="8" bottom="8"/></padding>
+        </VBox>
+    </center>
+</BorderPane>

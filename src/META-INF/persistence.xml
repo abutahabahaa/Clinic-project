@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+  <persistence-unit name="clinicPU">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+    <class>models.Patient</class>
+    <class>models.Doctor</class>
+    <class>models.Appointment</class>
+    <class>models.User</class>
+
+    <properties>
+    
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/clinic?useSSL=false&amp;serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+
+    
+      <property name="eclipselink.target-database" value="MySQL"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="eclipselink.logging.parameters" value="true"/>
+      <!-- لبيئة Java SE بدون وكيل نسج Weaving: -->
+      <property name="eclipselink.weaving" value="false"/>
+
+      
+      <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+    </properties>
+  </persistence-unit>
+</persistence>
